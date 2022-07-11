@@ -1,0 +1,18 @@
+services:
+  _defaults:
+    public: true
+
+  fruit.grid.filter.fruits_filter_form_factory:
+    class: Fruit\Grid\Filter\FruitsFilterFormFactory
+    arguments:
+      - '@prestashop.core.grid.filter.form_factory'
+      - '@router'
+      - '@request_stack'
+
+  fruit.grid.fruit_grid_factory:
+    class: PrestaShop\PrestaShop\Core\Grid\GridFactory
+    arguments:
+      - '@fruit.grid.definition.factory.fruits_definition_factory'
+      - '@fruit.grid.data.factory.fruits_data_factory'
+      - '@fruit.grid.filter.fruits_filter_form_factory'
+      - '@prestashop.core.hook.dispatcher'

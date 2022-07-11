@@ -1,0 +1,8 @@
+services:
+  _defaults:
+    public: true
+
+  fruit.grid.definition.factory.fruits_definition_factory:
+    class: Fruit\Grid\Definition\Factory\FruitsDefinitionFactory
+    parent: prestashop.core.grid.definition.factory.abstract_grid_definition
+    public: true

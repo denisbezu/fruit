@@ -1,0 +1,26 @@
+{% extends '@PrestaShop/Admin/layout.html.twig' %}
+
+{% set layoutHeaderToolbarBtn = {
+  add_funnel: {
+    href: path('fruit_admin_sync', {}),
+    desc: 'Synchronize fruits with API'|trans({}, 'Modules.Fruit.List'),
+    icon: 'sync',
+  }
+} %}
+
+{% block content %}
+  {% block fruits_grid %}
+    <div class="row">
+      <div class="col">
+        {% include '@PrestaShop/Admin/Common/Grid/grid_panel.html.twig' with {'grid': fruitGrid} %}
+      </div>
+    </div>
+  {% endblock %}
+
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  <script src="{{ asset('../modules/fruit/views/js/admin/fruits/grid.js') }}"></script>
+  <script src="{{ asset('themes/default/js/bundle/pagination.js') }}"></script>
+{% endblock %}

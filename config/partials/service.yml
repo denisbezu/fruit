@@ -1,0 +1,8 @@
+services:
+  _defaults:
+    public: true
+
+  fruit.service.fruit_service:
+    class: Fruit\Service\FruitService
+    arguments:
+      - '@fruit.repository.fruit_repository'

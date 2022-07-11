@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    public: true
+
+  fruit.grid.query.fruits_query_builder:
+    class: Fruit\Grid\Query\FruitsQueryBuilder
+    parent: prestashop.core.grid.abstract_query_builder
+    public: true
+    arguments:
+      - '@prestashop.core.query.doctrine_search_criteria_applicator'

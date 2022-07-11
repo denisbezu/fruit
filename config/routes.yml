@@ -1,0 +1,25 @@
+fruit_admin_index:
+  path: /fruit/all
+  methods: [GET]
+  defaults:
+    _controller: 'Fruit\Controller\Admin\AdminFruitsController::indexAction'
+    _legacy_controller: AdminFruitFruits
+    _legacy_link: AdminFruitFruits
+
+fruit_admin_index_search:
+  path: /fruit/all/search
+  methods: POST
+  defaults:
+    _controller: 'Fruit\Controller\Admin\AdminFruitsController::searchAction'
+    _legacy_controller: AdminFruitFruits
+    _legacy_link: 'AdminFruitFruits:searchAction'
+
+
+fruit_admin_sync:
+  path: /fruit/sync
+  methods: [GET]
+  defaults:
+    _controller: 'Fruit\Controller\Admin\AdminFruitsController::syncAction'
+    _legacy_controller: AdminFruitFruits
+    _legacy_link: AdminFruitFruits
+

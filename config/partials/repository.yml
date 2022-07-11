@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    public: true
+
+  fruit.repository.fruit_repository:
+    class: Fruit\Repository\FruitRepository
+    arguments:
+      - '@doctrine.dbal.default_connection'
+      - '%database_prefix%'
+      - "@=service('prestashop.adapter.legacy.context').getContext().language.id"
+      - "@=service('prestashop.adapter.legacy.context').getContext().shop.id"

@@ -1,0 +1,13 @@
+imports:
+  - { resource: partials/repository.yml }
+  - { resource: partials/service.yml }
+
+services:
+  _defaults:
+    public: true
+
+  fruit:
+    class: 'Fruit'
+    factory: [ 'Module', 'getInstanceByName' ]
+    arguments:
+      - 'fruit'

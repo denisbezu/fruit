@@ -1,0 +1,9 @@
+imports:
+  - { resource: common.yml }
+  - { resource: partials/grid/doctrine_query_builder.yml }
+  - { resource: partials/grid/grid.yml }
+  - { resource: partials/grid/grid_definition_factory.yml }
+  - { resource: partials/grid/grid_factory.yml }
+services:
+  _defaults:
+    public: true

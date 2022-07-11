@@ -1,0 +1,6 @@
+*.xml
+*.log
+.php_cs.cache
+!test/phpunit.xml
+node_modules
+vendor
